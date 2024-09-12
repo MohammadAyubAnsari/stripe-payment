@@ -106,6 +106,8 @@ const ConfirmationPage = () => {
   const [errors, setErrors] = useState({ name: "", wallet: "" });
   const navigate = useNavigate();
 
+  const API = import.meta.env.VITE_API_URL;
+
   const handleSubmit = async (e) => {
     e.preventDefault();
 
@@ -132,7 +134,7 @@ const ConfirmationPage = () => {
 
     try {
       // Send data to the backend
-      const response = await axios.post("http://localhost:5003/api/users", {
+      const response = await axios.post(`${API}/api/users`, {
         name,
         wallet,
       });
