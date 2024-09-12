@@ -13,7 +13,7 @@ function App() {
       <Routes>
         <Route path="/checkout" element={<CheckoutPage />} />
         <Route path="/confirm" element={<ConfirmationPage />} />
-        <Route path="*" element={<Navigate to="/confirm" />} />
+        <Route path="*" element={<Navigate to="/checkout" />} />
       </Routes>
     </Router>
   );
