@@ -2,6 +2,8 @@ import { useState, useEffect } from "react";
 import axios from "axios";
 import { useLocation } from "react-router-dom"; // To capture query parameters
 
+const API = import.meta.env.VITE_API_URL;
+
 const CheckoutPage = () => {
   const [tokens, setTokens] = useState(100);
   // const [showPaymentSection, setShowPaymentSection] = useState(false);
@@ -29,7 +31,7 @@ const CheckoutPage = () => {
 
   const handleProceedPayment = async () => {
     try {
-      const response = await axios.post("http://localhost:5005/api/saveData", {
+      const response = await axios.post(`${API}/api/saveData`, {
         name,
         wallet,
         email,
